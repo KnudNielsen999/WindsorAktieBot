@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="AktieBotLibrary/AktieBotLibrary.csproj" />
+  <Project Path="WindsorAktieBot/WindsorAktieBot.csproj" />
+</Solution>
