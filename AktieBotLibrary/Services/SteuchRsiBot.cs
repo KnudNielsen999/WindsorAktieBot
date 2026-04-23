@@ -7,9 +7,9 @@ public sealed class SteuchRsiBot
 {
     private const int RsiPeriod = 14;
 
-    private readonly BotDatabase _database;
+    private readonly IBotDatabase _database;
 
-    public SteuchRsiBot(BotDatabase? database = null)
+    public SteuchRsiBot(IBotDatabase? database = null)
     {
         _database = database ?? new BotDatabase();
     }

@@ -6,6 +6,7 @@ namespace AktieBotLibrary.Models;
 
 public sealed class SignalRecord
 {
+    public int Id { get; set; }
     public DateTime Timestamp { get; set; }
     public string Symbol { get; set; } = "";
     public decimal Price { get; set; }
@@ -24,4 +25,5 @@ public sealed class SignalRecord
     public decimal HighestCloseSinceBuy { get; set; }
     public decimal TrailingStopPrice { get; set; }
     public bool TrailingActive { get; set; }
+    public int? PositionRecordId { get; set; }
 }

@@ -21,4 +21,7 @@ public sealed class TradeRecord
     public decimal RealizedPnLUsd { get; set; }
     public decimal RealizedPnLDkk { get; set; }
     public bool IsMatched { get; set; }
+    public string? BrokerOrderId { get; set; }
+    public int? SignalRecordId { get; set; }
+    public int? PositionRecordId { get; set; }
 }

@@ -18,10 +18,10 @@
 
 ## 3. Udvid databasen
 
-- [ ] Beslut om botdata skal ligge i samme SQL Server database som webappen eller i separat database.
-- [ ] Udvid `ApplicationDbContext` eller opret separat bot-db-context til handler, signaler, positioner og pending orders.
-- [ ] Opret EF Core migrationer for bot-tabeller.
-- [ ] Gem signaler, handler og aaben position-state persistent.
+- [x] Beslut om botdata skal ligge i samme SQL Server database som webappen eller i separat database.
+- [x] Udvid `ApplicationDbContext` eller opret separat bot-db-context til handler, signaler, positioner og pending orders.
+- [x] Opret EF Core migrationer for bot-tabeller.
+- [x] Gem signaler, handler og aaben position-state persistent.
 
 ## 4. Goer koerslen automatisk
 

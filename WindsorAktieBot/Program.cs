@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using AktieBotLibrary.Database;
 using WindsorAktieBot.Components;
 using WindsorAktieBot.Components.Account;
 using WindsorAktieBot.Data;
@@ -26,6 +27,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services.AddScoped<IBotDatabase, EfBotDatabase>();
 
 builder.Services.AddIdentityCore<ApplicationUser>(options =>
     {
