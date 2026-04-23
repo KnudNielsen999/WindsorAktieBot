@@ -10,11 +10,11 @@
 
 ## 2. Implementer rigtig botlogik
 
-- [ ] Opret service til hentning af markedsdata for de symboler botten skal handle.
-- [ ] Implementer beregning af RSI, SMA20, SMA50 og SMA200.
-- [ ] Definer konkrete regler for buy, sell, hard stop loss og trailing stop.
-- [ ] Implementer state-haandtering, saa botten ved om den ejer en position i et symbol.
-- [ ] Tilfoej ordrehistorik og matchning mellem koeb og salg.
+- [x] Opret service til hentning af markedsdata for de symboler botten skal handle.
+- [x] Implementer beregning af RSI, SMA20, SMA50 og SMA200.
+- [x] Definer konkrete regler for buy, sell, hard stop loss og trailing stop.
+- [x] Implementer state-haandtering, saa botten ved om den ejer en position i et symbol.
+- [x] Tilfoej ordrehistorik og matchning mellem koeb og salg.
 
 ## 3. Udvid databasen
 
@@ -30,6 +30,15 @@
 - [ ] Definer hvor tit botten skal evaluere markedet.
 - [ ] Indbyg markedstider, saa botten kun handler naar boersen er aaben.
 - [ ] Sikr at samme signal ikke kan sende dublette ordrer ved genstart eller fejl.
+
+
+## 4.1 tilføj api
+[x]
+konfigurer projektet så Alpaca API keys ikke ligger i appsettings.json men i user secrets. 
+opret korrekt struktur i appsettings.json uden secrets, opsæt user secrets til Alpaca:KeyId og Alpaca:SecretKey, 
+og opdater koden så botten læser konfiguration via IOptions<AlpacaSettings>. 
+vis hvilke filer du ændrer og hvorfor.
+og derefter tilføj også instruktion til hvordan jeg sætter user secrets via dotnet CLI
 
 ## 5. Tilfoej konfiguration og secrets
 

@@ -1,5 +1,7 @@
+using AktieBotLibrary.Configuration;
 using AktieBotLibrary.Database;
 using AktieBotLibrary.Models;
+using Microsoft.Extensions.Options;
 
 namespace AktieBotLibrary.Services;
 
@@ -8,11 +10,19 @@ public sealed class SteuchRsiBot
     private const int RsiPeriod = 14;
 
     private readonly IBotDatabase _database;
+    private readonly AlpacaSettings _alpacaSettings;
 
-    public SteuchRsiBot(IBotDatabase? database = null)
+    public SteuchRsiBot(IBotDatabase? database = null, IOptions<AlpacaSettings>? alpacaOptions = null)
     {
         _database = database ?? new BotDatabase();
+        _alpacaSettings = alpacaOptions?.Value ?? new AlpacaSettings();
     }
+
+    public AlpacaSettings AlpacaSettings => _alpacaSettings;
+
+    public bool HasAlpacaCredentialsConfigured =>
+        !string.IsNullOrWhiteSpace(_alpacaSettings.KeyId) &&
+        !string.IsNullOrWhiteSpace(_alpacaSettings.SecretKey);
 
     public SignalRecord Evaluate(
         string symbol,

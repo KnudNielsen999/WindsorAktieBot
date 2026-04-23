@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using AktieBotLibrary.Configuration;
 using AktieBotLibrary.Database;
+using AktieBotLibrary.Services;
 using WindsorAktieBot.Components;
 using WindsorAktieBot.Components.Account;
 using WindsorAktieBot.Data;
@@ -28,6 +30,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddScoped<IBotDatabase, EfBotDatabase>();
+builder.Services
+    .AddOptions<AlpacaSettings>()
+    .BindConfiguration(AlpacaSettings.SectionName);
+builder.Services.AddScoped<SteuchRsiBot>();
 
 builder.Services.AddIdentityCore<ApplicationUser>(options =>
     {
